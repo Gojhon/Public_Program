@@ -1,0 +1,4 @@
+﻿  R_D.cpp
+c:\users\kimo8\documents\visual studio 2015\projects\random\r_d\r_d.cpp(46): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\kimo8\documents\visual studio 2015\projects\random\r_d\r_d.cpp(65): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  R_D.vcxproj -> C:\Users\kimo8\documents\visual studio 2015\Projects\Random\Debug\R_D.exe
