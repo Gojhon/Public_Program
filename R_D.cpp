@@ -8,6 +8,7 @@
 #include<strstream>
 #include<Windows.h>
 
+void gotoXY(int x, int y);
 int name_number(std::string name);
 
 int main()
@@ -37,25 +38,36 @@ int main()
 			if (index == Names_num )
 				break;
 	}
-	std::uniform_int_distribution<int> dist(10, 100);
+	std::uniform_int_distribution<int> dist(20, 50);
 	//10~100사이의 값이 랜덤으로 값으로 지정한다.
 	std::random_device gen; //랜덤 변수 생성
 	unsigned int RD = dist(gen); 
 	//int형 변수 RD에 10~100의 랜덤으로 추출된 값을 넣는다. 
 	index = 0;
+	int sleep = 0;
 	for (int Rdindex = 0; Rdindex < RD; Rdindex++)
 	{ //
 		system("cls"); //화면을 지운다
+		gotoXY(75,25);
 		std::cout << Names_arr[index] << std::endl;//이름을 출력한다.
-		Sleep(500); //0.5초뒤에 index값을 증가 시킨다.
+		Sleep(sleep); //0.5초뒤에 index값을 증가 시킨다.
 		index++;
+		sleep += 20;
 		if (index ==Names_num )  //객체의 숫자와 index값이 같을경우 초기화시킨다.
 			index = 0;
 	}
 	
 	delete[] Names_arr;
+
+	system("pause");
     return 0;
 }
+
+void gotoXY(int x, int y) {
+	COORD pos = { x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
 
 int name_number(std::string name)
 {
